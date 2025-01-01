@@ -1,4 +1,4 @@
-FROM python:3.12 as build
+FROM python:3.12 AS build
 
 
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -16,7 +16,7 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
-COPY --from=build /usr/local/lib/python3.13/site-packages /usr/local/lib/python3.13/site-packages
+COPY --from=build /usr/local/lib/python3.12/site-packages /usr/local/lib/python3.12/site-packages
 COPY --from=build /usr/local/bin /usr/local/bin
 
 COPY . /app
